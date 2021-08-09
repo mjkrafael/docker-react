@@ -16,6 +16,7 @@ RUN npm run build
 
 ###Segundo contenedor donde se guardara todo lo compilido en el contenedor anterior
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
 #Caso AWS no acepta etiqueta de renombre
